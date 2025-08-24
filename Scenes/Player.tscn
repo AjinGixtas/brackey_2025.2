@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://cprh0n7nb2jbv"]
+
+[ext_resource type="Script" uid="uid://ccsaidshaemc2" path="res://Scripts/positional_component.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://cdr4mp41i4goo" path="res://Arts/InteractableWall.png" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://dv3gye2potw3i" path="res://Scenes/player.gd" id="1_yoq75"]
+[ext_resource type="PackedScene" uid="uid://vjsdvc4foqct" path="res://Scenes/hurtbox.tscn" id="2_5ixxa"]
+[ext_resource type="Script" uid="uid://npg14qd1sc51" path="res://Scripts/gun_behavior_control.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://yt1qknge16cy" path="res://Scripts/gun_display_control.gd" id="4_52ee3"]
+[ext_resource type="Script" uid="uid://dff40qm750vqp" path="res://Scripts/statsheet.gd" id="4_dewec"]
+[ext_resource type="Texture2D" uid="uid://ibh80h08wrwk" path="res://Arts/gun.png" id="5_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://cdm7y5ctf6j2d" path="res://icon.svg" id="6_megsn"]
+[ext_resource type="PackedScene" uid="uid://c7l5xuiyxg7cm" path="res://Scenes/Bullets/BulletA.tscn" id="7_bhhdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoq75"]
+size = Vector2(24, 48)
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("positional_component")]
+script = ExtResource("1_yoq75")
+positional_component = NodePath("PositionalComponent")
+
+[node name="PositionalComponent" type="CharacterBody2D" parent="." node_paths=PackedStringArray("statsheet")]
+script = ExtResource("1_kpjcp")
+statsheet = NodePath("../StatSheet")
+
+[node name="Camera2D" type="Camera2D" parent="PositionalComponent"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionalComponent"]
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="Hurtbox" parent="PositionalComponent" groups=["Player"] instance=ExtResource("2_5ixxa")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionalComponent/Hurtbox"]
+shape = SubResource("RectangleShape2D_yoq75")
+
+[node name="RotationalComponent" type="Node2D" parent="PositionalComponent"]
+
+[node name="PlayerSprite" type="Sprite2D" parent="PositionalComponent/RotationalComponent"]
+rotation = -1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("1_xhfnw")
+
+[node name="GunControlPoint" type="Node2D" parent="PositionalComponent" node_paths=PackedStringArray("bullet_spawn_point", "gun_behavior_control", "statsheet", "bullet_container", "gun_sprite")]
+script = ExtResource("4_52ee3")
+bullet_spawn_point = NodePath("Sprite2D/BulletSpawnPoint")
+gun_behavior_control = NodePath("../../GunBehaviorControl")
+statsheet = NodePath("../../StatSheet")
+bullet_container = NodePath("../../BulletContainer")
+gun_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="PositionalComponent/GunControlPoint"]
+position = Vector2(27, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("5_bhhdu")
+
+[node name="BulletSpawnPoint" type="Node2D" parent="PositionalComponent/GunControlPoint/Sprite2D"]
+position = Vector2(4, -2)
+
+[node name="Marker2D" type="Marker2D" parent="PositionalComponent/GunControlPoint/Sprite2D/BulletSpawnPoint"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PositionalComponent/GunControlPoint/Sprite2D/BulletSpawnPoint/Marker2D"]
+scale = Vector2(0.008, 0.008)
+texture = ExtResource("6_megsn")
+
+[node name="GunBehaviorControl" type="Node" parent="."]
+script = ExtResource("3_gntrk")
+bulletA_scene = ExtResource("7_bhhdu")
+
+[node name="StatSheet" type="Node" parent="."]
+script = ExtResource("4_dewec")
+bullet_damage = 1
+bullet_speed = 512.0
+move_speed = 256.0
+
+[node name="BulletContainer" type="Node2D" parent="."]

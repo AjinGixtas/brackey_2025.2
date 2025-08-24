@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cprh0n7nb2jbv"]
+
+[ext_resource type="Script" uid="uid://ccsaidshaemc2" path="res://Scripts/positional_component.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://cdr4mp41i4goo" path="res://Arts/InteractableWall.png" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://vjsdvc4foqct" path="res://Scenes/hurtbox.tscn" id="2_5ixxa"]
+[ext_resource type="Script" uid="uid://npg14qd1sc51" path="res://Scripts/gun_behavior_control.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://yt1qknge16cy" path="res://Scenes/gun_display_control.gd" id="4_52ee3"]
+[ext_resource type="Script" uid="uid://dff40qm750vqp" path="res://Scripts/statsheet.gd" id="4_dewec"]
+[ext_resource type="Texture2D" uid="uid://ibh80h08wrwk" path="res://Arts/gun.png" id="5_bhhdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(4, 4)
+
+[node name="Player" type="Node2D"]
+
+[node name="PositionalComponent" type="CharacterBody2D" parent="."]
+script = ExtResource("1_kpjcp")
+
+[node name="Camera2D" type="Camera2D" parent="PositionalComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionalComponent"]
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="Hurtbox" parent="PositionalComponent" groups=["Player"] instance=ExtResource("2_5ixxa")]
+
+[node name="RotationalComponent" type="Node2D" parent="PositionalComponent"]
+
+[node name="PlayerSprite" type="Sprite2D" parent="PositionalComponent/RotationalComponent"]
+rotation = -1.5708
+texture = ExtResource("1_xhfnw")
+
+[node name="GunControlPoint" type="Node2D" parent="PositionalComponent"]
+script = ExtResource("4_52ee3")
+
+[node name="Sprite2D" type="Sprite2D" parent="PositionalComponent/GunControlPoint"]
+position = Vector2(7, 0)
+texture = ExtResource("5_bhhdu")
+
+[node name="GunBehaviorControl" type="Node" parent="."]
+script = ExtResource("3_gntrk")
+
+[node name="StatSheet" type="Node" parent="."]
+script = ExtResource("4_dewec")
