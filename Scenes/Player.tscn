@@ -18,9 +18,10 @@ size = Vector2(4, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoq75"]
 size = Vector2(24, 48)
 
-[node name="Player" type="Node2D" node_paths=PackedStringArray("positional_component")]
+[node name="Player" type="Node2D" node_paths=PackedStringArray("positional_component", "gun_behavior_control")]
 script = ExtResource("1_yoq75")
 positional_component = NodePath("PositionalComponent")
+gun_behavior_control = NodePath("GunBehaviorControl")
 
 [node name="PositionalComponent" type="CharacterBody2D" parent="." node_paths=PackedStringArray("statsheet")]
 script = ExtResource("1_kpjcp")

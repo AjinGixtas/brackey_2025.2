@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dpitp3rres3t2"]
+[gd_scene load_steps=8 format=4 uid="uid://dpitp3rres3t2"]
 
 [ext_resource type="Texture2D" uid="uid://72l2u8ae6g8" path="res://Arts/Floor.png" id="1_s7ljx"]
 [ext_resource type="PackedScene" uid="uid://cprh0n7nb2jbv" path="res://Scenes/Player.tscn" id="2_lakq1"]
 [ext_resource type="Script" uid="uid://clfdfv2ehs1dl" path="res://Scripts/enemy_director.gd" id="3_535oe"]
 [ext_resource type="PackedScene" uid="uid://bcgcauakth4up" path="res://Scenes/Crawlie.tscn" id="4_7vjhc"]
+[ext_resource type="PackedScene" uid="uid://bnnb8vvc1skpu" path="res://Scenes/upgrade_director.tscn" id="5_353r0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lakq1"]
 texture = ExtResource("1_s7ljx")
@@ -38,4 +39,5 @@ end_marker = NodePath("Marker2D2")
 [node name="Marker2D2" type="Marker2D" parent="EnemyDirector"]
 position = Vector2(4128, 4128)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="UpgradeDirector" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_353r0")]
+player = NodePath("../Player")

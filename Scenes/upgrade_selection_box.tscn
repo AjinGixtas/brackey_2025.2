@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://br7se2trcotxx"]
+
+[ext_resource type="Script" uid="uid://b1ib7lwqp3pp5" path="res://Scenes/upgrade_selection_box.gd" id="1_56xfe"]
+[ext_resource type="FontFile" uid="uid://cmnwntkudpkmv" path="res://Arts/04B_03__.TTF" id="2_j5us3"]
+[ext_resource type="Theme" uid="uid://b5tugm713ow2p" path="res://Resources/upgrade_selection_box.tres" id="3_unw5o"]
+
+[node name="UpgradeSelectionBox" type="Control"]
+custom_minimum_size = Vector2(48, 64)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_56xfe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_j5us3")
+bbcode_enabled = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+pivot_offset = Vector2(32, 32)
+theme = ExtResource("3_unw5o")
+
+[node name="ColorRect" type="ColorRect" parent="Button"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.061, 0.061, 0.1, 1)

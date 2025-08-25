@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnac4ewnivdl2"]
+
+[ext_resource type="Script" uid="uid://btew8pclh618b" path="res://Scenes/current_upgrade_box.gd" id="1_yx2fc"]
+[ext_resource type="Theme" uid="uid://clharybqbnknf" path="res://Resources/current_upgrade_box.tres" id="2_onjjr"]
+
+[node name="CurrentUpgradeBox" type="Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_yx2fc")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_onjjr")
