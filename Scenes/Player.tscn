@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cprh0n7nb2jbv"]
+[gd_scene load_steps=14 format=3 uid="uid://cprh0n7nb2jbv"]
 
 [ext_resource type="Script" uid="uid://ccsaidshaemc2" path="res://Scripts/positional_component.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://cdr4mp41i4goo" path="res://Arts/InteractableWall.png" id="1_xhfnw"]
-[ext_resource type="Script" uid="uid://dv3gye2potw3i" path="res://Scenes/player.gd" id="1_yoq75"]
+[ext_resource type="Script" uid="uid://dv3gye2potw3i" path="res://Scripts/player.gd" id="1_yoq75"]
 [ext_resource type="PackedScene" uid="uid://vjsdvc4foqct" path="res://Scenes/hurtbox.tscn" id="2_5ixxa"]
 [ext_resource type="Script" uid="uid://npg14qd1sc51" path="res://Scripts/gun_behavior_control.gd" id="3_gntrk"]
 [ext_resource type="Script" uid="uid://yt1qknge16cy" path="res://Scripts/gun_display_control.gd" id="4_52ee3"]
 [ext_resource type="Script" uid="uid://dff40qm750vqp" path="res://Scripts/statsheet.gd" id="4_dewec"]
 [ext_resource type="Texture2D" uid="uid://ibh80h08wrwk" path="res://Arts/gun.png" id="5_bhhdu"]
+[ext_resource type="PackedScene" uid="uid://b1vawro0xtcs7" path="res://Scenes/temp_shooter.tscn" id="6_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://cdm7y5ctf6j2d" path="res://icon.svg" id="6_megsn"]
 [ext_resource type="PackedScene" uid="uid://c7l5xuiyxg7cm" path="res://Scenes/Bullets/BulletA.tscn" id="7_bhhdu"]
 
@@ -26,7 +27,6 @@ script = ExtResource("1_kpjcp")
 statsheet = NodePath("../StatSheet")
 
 [node name="Camera2D" type="Camera2D" parent="PositionalComponent"]
-zoom = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PositionalComponent"]
 shape = SubResource("RectangleShape2D_kpjcp")
@@ -50,6 +50,7 @@ gun_behavior_control = NodePath("../../GunBehaviorControl")
 statsheet = NodePath("../../StatSheet")
 bullet_container = NodePath("../../BulletContainer")
 gun_sprite = NodePath("Sprite2D")
+temp_shooter_scene = ExtResource("6_ksbbd")
 
 [node name="Sprite2D" type="Sprite2D" parent="PositionalComponent/GunControlPoint"]
 position = Vector2(27, 0)
