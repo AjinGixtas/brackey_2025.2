@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnnb8vvc1skpu"]
+[gd_scene load_steps=9 format=3 uid="uid://bnnb8vvc1skpu"]
 
 [ext_resource type="Script" uid="uid://bdl05e33fplb" path="res://Scripts/upgrade_director.gd" id="1_ugic4"]
-[ext_resource type="Script" uid="uid://b1ib7lwqp3pp5" path="res://Scenes/upgrade_selection_box.gd" id="2_p1312"]
+[ext_resource type="Script" uid="uid://b1ib7lwqp3pp5" path="res://Scripts/upgrade_selection_box.gd" id="2_p1312"]
 [ext_resource type="FontFile" uid="uid://cmnwntkudpkmv" path="res://Arts/04B_03__.TTF" id="3_2vw04"]
 [ext_resource type="Theme" uid="uid://b5tugm713ow2p" path="res://Resources/upgrade_selection_box.tres" id="4_2xi3g"]
+[ext_resource type="Script" uid="uid://btew8pclh618b" path="res://Scripts/current_upgrade_box.gd" id="5_p1312"]
 
 [sub_resource type="Animation" id="Animation_ymhgd"]
 length = 0.001
@@ -70,103 +71,416 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_left")
+tracks/5/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_left")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.2]
+"values": [0.100204]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_top")
+tracks/6/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_top")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.1]
+"values": [1.67347]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_right")
+tracks/7/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_right")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.8]
+"values": [0.896648]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_bottom")
+tracks/8/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_bottom")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.767]
+"values": [2.81836]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_left")
+tracks/9/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_left")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.2]
+"values": [-0.00784884]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_top")
+tracks/10/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_top")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.667]
+"values": [1.76562]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_right")
+tracks/11/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_right")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.8]
+"values": [1.01093]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_bottom")
+tracks/12/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_bottom")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.975]
+"values": [2.74938]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0344828]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_top")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.78916]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_right")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.03275]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_bottom")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.73914]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_left")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.265477]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_top")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.51852]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_right")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.15708]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_bottom")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.4497]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_left")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0548482]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_top")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.35212]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_right")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.07564]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_bottom")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.366819]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_left")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.121622]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_top")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.35556]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_right")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.980572]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_bottom")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.431022]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("UpgradeDisplay/Control2:anchor_left")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.703125]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("UpgradeDisplay/Control2:anchor_top")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.672222]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("UpgradeDisplay/Control2:anchor_right")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.983469]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("UpgradeDisplay/Control2:anchor_bottom")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.843286]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("UpgradeDisplay/Control:anchor_left")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.734375]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("UpgradeDisplay/Control:anchor_top")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.133333]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("UpgradeDisplay/Control:anchor_right")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.02134]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("UpgradeDisplay/Control:anchor_bottom")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4104]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("UpgradeDisplay/Control:rotation")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.10472]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("UpgradeDisplay/Control2:rotation")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.10472]
 }
 
 [sub_resource type="Animation" id="Animation_ugic4"]
 resource_name = "pull_up_upgrade"
 length = 0.4
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -230,98 +544,410 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_left")
+tracks/5/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_left")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.2, 0.3),
-"transitions": PackedFloat32Array(0.333333, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.5, 0.125]
+"values": [0.100204, 0.100204, 0.1]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_top")
+tracks/6/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_top")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.2, 0.3),
-"transitions": PackedFloat32Array(0.5, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-1.0, 0.05]
+"values": [1.67347, 1.67347, -0.1]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_right")
+tracks/7/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_right")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.2, 0.3),
-"transitions": PackedFloat32Array(0.333333, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.5, 0.875]
+"values": [0.896648, 0.896648, 1.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("UpgradeDisplay/Bullet2Switch2:anchor_bottom")
+tracks/8/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button:anchor_bottom")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.2, 0.3),
-"transitions": PackedFloat32Array(0.565685, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-0.4, 0.55]
+"values": [2.81836, 2.81836, 1.05792]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_left")
+tracks/9/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_left")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 0.5, 1),
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-0.2, -0.2, 0.2]
+"values": [-0.00784884, -0.00784884, 0.0]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_top")
+tracks/10/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_top")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 0.5, 1),
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.3, 1.3, 0.667]
+"values": [1.76562, 1.76562, 0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_right")
+tracks/11/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_right")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 0.5, 1),
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.2, 1.2, 0.8]
+"values": [1.01093, 1.01093, 1.0]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom:anchor_bottom")
+tracks/12/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_bottom")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 2, 1),
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.8, 1.8, 0.9]
+"values": [2.74938, 2.74938, 1.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0344828, -0.0344828, 0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_top")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.78916, 1.78916, 0.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_right")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.03275, 1.03275, 1.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button:anchor_bottom")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.73914, 2.73914, 1.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_left")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [0.265477, 0.265477, 0.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_top")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-1.51852, -1.51852, 0.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_right")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [1.15708, 1.15708, 1.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button:anchor_bottom")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-0.4497, -0.4497, 1.0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_left")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.216667, 0.25),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [0.0548482, 0.0548482, 0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_top")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.216667, 0.25),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-1.35212, -1.35212, 0.0]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_right")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 0.216667, 0.25),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [1.07564, 1.07564, 1.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button:anchor_bottom")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 0.216667, 0.25),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-0.366819, -0.366819, 1.0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_left")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-0.121622, -0.121622, 0.0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_top")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-1.35556, -1.35556, 0.0]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_right")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [0.980572, 0.980572, 1.0]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button:anchor_bottom")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [-0.431022, -0.431022, 1.0]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("UpgradeDisplay/Control2:anchor_left")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.17188, 1.17188, 0.703125]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("UpgradeDisplay/Control2:anchor_top")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7, 0.7, 0.672222]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("UpgradeDisplay/Control2:anchor_right")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.45222, 1.45222, 0.983469]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("UpgradeDisplay/Control2:anchor_bottom")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.871063, 0.871063, 0.843286]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("UpgradeDisplay/Control:anchor_left")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 0.316667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.15, 1.15, 0.734375]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("UpgradeDisplay/Control:anchor_top")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 0.316667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.233333, -0.233333, 0.133333]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("UpgradeDisplay/Control:anchor_right")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 0.316667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.43697, 1.43697, 1.02134]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("UpgradeDisplay/Control:anchor_bottom")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0, 0.316667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0437331, 0.0437331, 0.4104]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("UpgradeDisplay/Control:rotation")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0.316667, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20944, 0.10472]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("UpgradeDisplay/Control2:rotation")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.20944, -0.10472]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sje32"]
@@ -354,10 +980,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Bullet2Switch2" type="Control" parent="UpgradeDisplay"]
 layout_mode = 1
-anchor_left = 0.2
-anchor_top = 0.1
-anchor_right = 0.8
-anchor_bottom = 0.767
+anchor_left = 0.065625
+anchor_top = 0.05
+anchor_right = 0.665625
+anchor_bottom = 0.4
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2Switch2"]
 visible = false
@@ -376,32 +1003,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 12
 
-[node name="UpgradeSelectionBox" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer"]
+[node name="UpgradeSelectionBox" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
+label = NodePath("Button/RichTextLabel")
 
 [node name="Button" type="Button" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0360434
-anchor_top = 0.0323417
-anchor_right = 1.06615
-anchor_bottom = 0.956875
-offset_left = 2.66721
-offset_top = -2.91075
-offset_right = -4.89521
-offset_bottom = 3.88125
+anchor_left = -0.121622
+anchor_top = -1.35556
+anchor_right = 0.980572
+anchor_bottom = -0.431022
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0872665
@@ -413,18 +1030,31 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.005
-anchor_top = -0.005
-anchor_right = 1.005
-anchor_bottom = 1.005
-offset_left = 2.45887
-offset_top = -4.29676
-offset_right = 2.45887
-offset_bottom = -4.29676
+anchor_left = 0.125
+anchor_top = 0.015625
+anchor_right = 1.07143
+anchor_bottom = 0.984375
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0675676
+anchor_right = 0.936727
+anchor_bottom = 1.01058
+offset_right = 7.68222
+offset_bottom = -5.95177
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0872665
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer"]
 layout_mode = 2
@@ -432,71 +1062,77 @@ size_flags_horizontal = 3
 theme_override_constants/margin_top = -5
 theme_override_constants/margin_bottom = 5
 
-[node name="UpgradeSelectionBox2" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer"]
+[node name="UpgradeSelectionBox2" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
+label = NodePath("Button/RichTextLabel")
 
 [node name="Button" type="Button" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.0548482
+anchor_top = -1.35212
+anchor_right = 1.07564
+anchor_bottom = -0.366819
+offset_left = 0.553604
+offset_top = -0.563347
+offset_right = -1.0057
+offset_bottom = 0.759285
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0174533
 pivot_offset = Vector2(32, 32)
 theme = ExtResource("4_2xi3g")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.01
-anchor_top = 0.02
-anchor_right = 1.03
-anchor_bottom = 1.01
-offset_left = 2.75
-offset_top = -1.8
-offset_right = 2.75
-offset_bottom = -1.8
+anchor_left = 0.0183686
+anchor_top = 0.0459259
+anchor_right = 1.08375
+anchor_bottom = 0.949135
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="UpgradeSelectionBox3" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer"]
-custom_minimum_size = Vector2(48, 64)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
-
-[node name="Button" type="Button" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0174533
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+bbcode_enabled = true
+
+[node name="UpgradeSelectionBox3" type="Control" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(48, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_p1312")
+label = NodePath("Button/RichTextLabel")
+
+[node name="Button" type="Button" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265477
+anchor_top = -1.51852
+anchor_right = 1.15708
+anchor_bottom = -0.4497
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 0.0872665
 pivot_offset = Vector2(32, 32)
 theme = ExtResource("4_2xi3g")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button"]
 z_index = -1
@@ -512,12 +1148,27 @@ mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0444444
+anchor_right = 1.00432
+anchor_bottom = 0.941582
+offset_right = -7.32378
+offset_bottom = 6.25765
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+bbcode_enabled = true
+
 [node name="Bullet2SwitchFrom" type="Control" parent="UpgradeDisplay"]
 layout_mode = 1
-anchor_left = 0.2
-anchor_top = 0.667
-anchor_right = 0.8
-anchor_bottom = 0.975
+anchor_left = 0.05
+anchor_top = 0.638889
+anchor_right = 0.65
+anchor_bottom = 0.871889
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2SwitchFrom"]
@@ -539,30 +1190,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="UpgradeSelectionBox" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer"]
+[node name="UpgradeSelectionBox" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer" node_paths=PackedStringArray("upgrade_director", "label")]
 custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
+script = ExtResource("5_p1312")
+upgrade_director = NodePath("../../../..")
+label = NodePath("Button/RichTextLabel")
 
 [node name="Button" type="Button" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0360434
-anchor_top = 0.0323417
-anchor_right = 1.06615
-anchor_bottom = 0.956875
-offset_left = 2.66721
+anchor_left = -0.0344828
+anchor_top = 1.78916
+anchor_right = 1.03275
+anchor_bottom = 2.73914
+offset_left = 2.66722
 offset_top = -2.91075
-offset_right = -4.89521
-offset_bottom = 3.88125
+offset_right = -2.86728
+offset_bottom = 2.25276
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0872665
@@ -584,90 +1230,207 @@ mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0762406
+anchor_right = 0.881329
+anchor_bottom = 0.982309
+offset_right = 5.76062
+offset_bottom = -3.93994
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0872665
+focus_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "fdsfw"
+horizontal_alignment = 1
+selection_enabled = true
+metadata/_edit_use_anchors_ = true
+
 [node name="MarginContainer" type="MarginContainer" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = -5
 theme_override_constants/margin_bottom = 5
 
-[node name="UpgradeSelectionBox2" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer"]
+[node name="UpgradeSelectionBox2" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer" node_paths=PackedStringArray("upgrade_director", "label")]
 custom_minimum_size = Vector2(48, 64)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
+script = ExtResource("5_p1312")
+upgrade_director = NodePath("../../../../..")
+btn_idx = 1
+label = NodePath("Button/RichTextLabel")
 
 [node name="Button" type="Button" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.00784884
+anchor_top = 1.76562
+anchor_right = 1.01093
+anchor_bottom = 2.74938
+offset_left = 0.553604
+offset_top = -0.563354
+offset_right = -0.554363
+offset_bottom = 0.476089
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0174533
 pivot_offset = Vector2(32, 32)
 theme = ExtResource("4_2xi3g")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0592138
-anchor_top = 0.0541898
-anchor_right = 1.09921
-anchor_bottom = 1.04419
-offset_left = 0.000385284
-offset_top = -3.46815
-offset_right = 0.00038147
-offset_bottom = -3.46815
+anchor_left = 0.0339479
+anchor_top = 0.0308214
+anchor_right = 1.07394
+anchor_bottom = 1.02082
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="UpgradeSelectionBox3" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer"]
-custom_minimum_size = Vector2(48, 64)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("2_p1312")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_2vw04")
-bbcode_enabled = true
-
-[node name="Button" type="Button" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0174533
+focus_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+horizontal_alignment = 1
+selection_enabled = true
+
+[node name="UpgradeSelectionBox3" type="Control" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer" node_paths=PackedStringArray("upgrade_director", "label")]
+custom_minimum_size = Vector2(48, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("5_p1312")
+upgrade_director = NodePath("../../../..")
+btn_idx = 2
+label = NodePath("Button/RichTextLabel")
+
+[node name="Button" type="Button" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.100204
+anchor_top = 1.67347
+anchor_right = 0.896648
+anchor_bottom = 2.81836
+offset_left = -2.91075
+offset_top = 2.66722
+offset_right = 3.29659
+offset_bottom = -1.70708
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 0.0872665
 pivot_offset = Vector2(32, 32)
 theme = ExtResource("4_2xi3g")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.157365
-anchor_top = 0.0286719
-anchor_right = 1.15736
-anchor_bottom = 1.00645
+anchor_left = 0.134891
+anchor_top = 0.0430215
+anchor_right = 1.12971
+anchor_bottom = 0.975154
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.061, 0.061, 0.1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0766253
+anchor_right = 0.97124
+anchor_bottom = 0.929854
+offset_top = -0.343282
+offset_right = -1.60168
+offset_bottom = 4.15889
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+focus_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+horizontal_alignment = 1
+selection_enabled = true
+
+[node name="Control" type="Control" parent="UpgradeDisplay"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 1
+anchor_left = 0.734375
+anchor_top = 0.133333
+anchor_right = 1.02134
+anchor_bottom = 0.4104
+offset_right = 4.70996
+offset_bottom = -9.87196
+rotation = 0.10472
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0959384
+anchor_top = -0.114361
+anchor_right = 0.950936
+anchor_bottom = 1.08564
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+theme_override_font_sizes/normal_font_size = 16
+text = "Must pick one!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="UpgradeDisplay"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 1
+anchor_left = 0.703125
+anchor_top = 0.672222
+anchor_right = 0.983469
+anchor_bottom = 0.843286
+offset_right = -3.71002
+offset_bottom = 9.20857
+rotation = -0.10472
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeDisplay/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0959384
+anchor_top = -0.114361
+anchor_right = 0.950936
+anchor_bottom = 1.08564
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_2vw04")
+theme_override_font_sizes/normal_font_size = 16
+text = "...and giving one Back"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://br7se2trcotxx"]
 
-[ext_resource type="Script" uid="uid://b1ib7lwqp3pp5" path="res://Scenes/upgrade_selection_box.gd" id="1_56xfe"]
+[ext_resource type="Script" uid="uid://b1ib7lwqp3pp5" path="res://Scripts/upgrade_selection_box.gd" id="1_56xfe"]
 [ext_resource type="FontFile" uid="uid://cmnwntkudpkmv" path="res://Arts/04B_03__.TTF" id="2_j5us3"]
 [ext_resource type="Theme" uid="uid://b5tugm713ow2p" path="res://Resources/upgrade_selection_box.tres" id="3_unw5o"]
 
