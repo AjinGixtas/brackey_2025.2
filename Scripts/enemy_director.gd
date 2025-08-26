@@ -60,22 +60,29 @@ func _spawn_enemy(budget: float) -> void:
 	var spawn_pos = Vector2(randf_range(start_marker.global_position.x, end_marker.global_position.x), 
 		randf_range(start_marker.global_position.y, end_marker.global_position.y))
 	var HARD_CAP = 32; var i = 0;
-	while spawn_pos.distance_squared_to(player.global_position) < 25600 and i < HARD_CAP:
+	spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * 700
+	spawn_pos = Vector2(
+		clamp(spawn_pos.x, start_marker.global_position.x, end_marker.global_position.x), 
+		clamp(spawn_pos.y, start_marker.global_position.y, end_marker.global_position.y))
+	while spawn_pos.distance_squared_to(player.positional_component.global_position) < 409600 and i < HARD_CAP:
+		spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * 700
 		spawn_pos = Vector2(
-			randf_range(start_marker.global_position.x, end_marker.global_position.x), 
-			randf_range(start_marker.global_position.y, end_marker.global_position.y)
-		)
+			clamp(spawn_pos.x, start_marker.global_position.x, end_marker.global_position.x), 
+			clamp(spawn_pos.y, start_marker.global_position.y, end_marker.global_position.y))
 		i += 1
 	add_child(inst)
 	inst.global_position = spawn_pos
 	# Deduct pts
 	amount_of_pts_in_sys -= chosen["pts"]
 	amount_of_pts_in_game += chosen["pts"]
-
+@export var exp_manager : EXP_Manager
+func enemy_killed(pts : float) -> void:
+	amount_of_pts_in_game -= pts
+	exp_manager.increase_exp(pts)
 var amount_of_pts_in_game : float = 0
 var amount_of_pts_in_sys : float = 0
 
-var amount_of_pts_in_game_cap : float = 64
+var amount_of_pts_in_game_cap : float = 32
 var amount_of_pts_in_sys_cap : float = 32
 var amount_of_pts_in_sys_gen_speed : float = 32
 var amount_of_pts_transfer_cap : float = 1

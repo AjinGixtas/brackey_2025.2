@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7mnvb3pq4gd7"]
+
+[ext_resource type="Script" uid="uid://dgruvwqdm4jm5" path="res://Scripts/bullet_b.gd" id="1_kbwfk"]
+[ext_resource type="Texture2D" uid="uid://dpc80ptr60tkc" path="res://Arts/BulletB.png" id="2_kbwfk"]
+[ext_resource type="PackedScene" uid="uid://jaodqjtor0rb" path="res://Scenes/hitbox.tscn" id="3_1lxfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1nh"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nq88"]
+size = Vector2(16, 4)
+
+[node name="BulletB" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+scale = Vector2(2, 2)
+script = ExtResource("1_kbwfk")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kbwfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["HitBox"]]
+shape = SubResource("RectangleShape2D_3u1nh")
+disabled = true
+
+[node name="Hitbox" parent="." groups=["Player"] instance=ExtResource("3_1lxfl")]
+target_group = "Enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_8nq88")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

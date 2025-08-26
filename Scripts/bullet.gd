@@ -1,6 +1,7 @@
 class_name Bullet extends CharacterBody2D
 var damage : int = 1
 var vel : Vector2
+@export var aplayer : AnimationPlayer
 @export var sprite : Sprite2D
 @warning_ignore("shadowed_variable_base_class")
 func init(velocity : Vector2, statsheet : StatSheet):

@@ -1,7 +1,7 @@
 class_name UpgradeSelectionBox extends Control
 
-const SHOT_TYPE := ["A"] # A - Normal, B - Pierce, C - Explosive
-const SHOT_NUMB := ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+const SHOT_TYPE := ["A", "B", "C"] # A - Normal, B - Pierce, C - Explosive
+const SHOT_NUMB := ["1", "2", "3", "4", "5", "7", "8", "9", "10"]
 const FIRE_TYPE := ["!", "@"] # ! - Blast, @ - Spray
 const base_type := { "A": 1.0, "B": 1.2, "C": 1.5 }
 const base_fire := { "!": 1.3, "@": 1.0 }
@@ -22,9 +22,9 @@ var round_strength : float
 @export var fire_type_texture : TextureRect
 @export var bullet_type_texture : TextureRect
 func init():
-	var shot_type = SHOT_TYPE.pick_random()
-	var fire_type = FIRE_TYPE.pick_random()
-	var shot_numb = SHOT_NUMB.pick_random()
+	var shot_type = pick_biased(SHOT_TYPE, 1.8)
+	var fire_type = pick_biased(FIRE_TYPE, 1)
+	var shot_numb = pick_biased(SHOT_NUMB, 6.0)
 	fire_type_texture.texture = fire_thumbnail[fire_type]
 	bullet_type_texture.texture = type_thumbnail[shot_type]
 	label.text = "x" + str(shot_numb)
@@ -41,3 +41,8 @@ func calculate_strength(name: String) -> float:
 
 func _on_button_pressed():
 	upgrade_director.select_new_upgrade(btn_idx)
+
+func pick_biased(array: Array, bias: float = 2.0) -> Variant:
+	var r = pow(randf(), bias)
+	var index = int(floor(r * array.size()))
+	return array[index]

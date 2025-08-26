@@ -5,6 +5,8 @@ class_name UpgradeDirector extends CanvasLayer
 @export var selected_old_upgrade : int
 @export var current_upgrade_boxes : Array[CurrentUpgradeBox] = []
 @export var upgrade_selection_boxes : Array[UpgradeSelectionBox] = []
+func pull_up_upgrade():
+	animation_player.play("pull_up_upgrade")
 func init():
 	selected_new_upgrade = -1
 	selected_old_upgrade = -1
@@ -13,6 +15,7 @@ func init():
 		upgrade_selection_boxes[i].init()
 func init_2():
 	Engine.time_scale = .1
+	
 func select_new_upgrade(idx : int) -> void:
 	selected_new_upgrade = idx
 	print(selected_old_upgrade, '!', selected_new_upgrade)
@@ -29,7 +32,10 @@ func swap_upgrade():
 	var new_round_val := upgrade_selection_boxes[selected_new_upgrade].round_name
 	var pow_diff = abs(current_upgrade_boxes[selected_old_upgrade].round_strength - upgrade_selection_boxes[selected_new_upgrade].round_strength)
 	player.gun_behavior_control.mag_bullets[old_round_idx] = new_round_val
-	enemy_director.amount_of_pts_in_sys_gen_speed += pow_diff
+	enemy_director.amount_of_pts_in_sys_gen_speed += pow_diff * .5
+	enemy_director.amount_of_pts_in_game_cap += pow_diff * .5
+	enemy_director.amount_of_pts_in_sys_cap += pow_diff * .5
+	print(pow_diff)
 	animation_player.play_backwards("pull_down_upgrade")
 func finish():
 	Engine.time_scale = 1

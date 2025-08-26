@@ -11,5 +11,5 @@ func _process(delta):
 	global_position += move_vec * delta
 
 func _on_died():
-	enemy_director.amount_of_pts_in_game -= point_amount
+	enemy_director.enemy_killed(point_amount)
 	queue_free()

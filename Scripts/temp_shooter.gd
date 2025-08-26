@@ -46,7 +46,7 @@ func spawn_bullet(angle_offset: float = 0.0) -> void:
 # ---------------- SHOOTING PATTERNS ----------------
 
 func shoot_cone() -> void:
-	var max_spread_rad := deg_to_rad(max(0, (pellet_count - 1) * 2.0))
+	var max_spread_rad := deg_to_rad(max(0, (pellet_count - 1) * 5.0))
 	for i in range(pellet_count):
 		var t : float = 0.0 if pellet_count == 1 else float(i) / float(pellet_count - 1)
 		var offset : float = lerp(-max_spread_rad, max_spread_rad, t)
@@ -57,7 +57,7 @@ func shoot_spray(delta: float) -> void:
 	if time2shoot_counter < TIME_TO_SHOOT: return
 	time2shoot_counter -= TIME_TO_SHOOT
 
-	var offset := randf_range(-spray_counter, spray_counter) * 0.05
+	var offset := deg_to_rad(randf_range(-spray_counter, spray_counter) * 3)
 	spawn_bullet(offset)
 	spray_counter += 1
 	if spray_counter >= pellet_count: queue_free()

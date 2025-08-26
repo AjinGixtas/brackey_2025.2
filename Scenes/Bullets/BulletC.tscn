@@ -1,19 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7l5xuiyxg7cm"]
+[gd_scene load_steps=11 format=3 uid="uid://hwyfxpr28ory"]
 
-[ext_resource type="Script" uid="uid://bldoikwmc5mjr" path="res://Scripts/bullet_a.gd" id="1_3u1nh"]
-[ext_resource type="Texture2D" uid="uid://ctahbrkfmaen" path="res://Arts/BulletA.png" id="2_8nq88"]
-[ext_resource type="PackedScene" uid="uid://jaodqjtor0rb" path="res://Scenes/hitbox.tscn" id="3_8nq88"]
-[ext_resource type="Texture2D" uid="uid://cwrw0o05d1n53" path="res://Arts/cloud_bullet.png" id="4_rpsmk"]
+[ext_resource type="Script" uid="uid://bl7e5soc841g4" path="res://Scenes/Bullets/bullet_c.gd" id="1_ruosc"]
+[ext_resource type="Texture2D" uid="uid://ehfhk01foy2r" path="res://Arts/BulletC.png" id="2_ruosc"]
+[ext_resource type="PackedScene" uid="uid://jaodqjtor0rb" path="res://Scenes/hitbox.tscn" id="3_vxwc8"]
+[ext_resource type="Texture2D" uid="uid://cicjr8hi75hq8" path="res://Arts/cloud.png" id="4_uuejs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1nh"]
 size = Vector2(4, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nq88"]
-size = Vector2(16, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uuejs"]
+radius = 8.0
 
-[sub_resource type="Animation" id="Animation_8nq88"]
+[sub_resource type="Animation" id="Animation_ruosc"]
 resource_name = "hit"
-length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,53 +20,53 @@ tracks/0/path = NodePath("GPUParticles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [32.0, 32.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"queue_free"
 }]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:moving")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D:visible")
+tracks/4/path = NodePath(".:moving")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -76,8 +75,20 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
-[sub_resource type="Animation" id="Animation_rpsmk"]
+[sub_resource type="Animation" id="Animation_vxwc8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -94,7 +105,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:moving")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -106,19 +117,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:shape:radius")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [8.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/path = NodePath(".:moving")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -127,49 +138,63 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpsmk"]
-_data = {
-&"RESET": SubResource("Animation_rpsmk"),
-&"hit": SubResource("Animation_8nq88")
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t60f2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuejs"]
+_data = {
+&"RESET": SubResource("Animation_vxwc8"),
+&"hit": SubResource("Animation_ruosc")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g8fme"]
+lifetime_randomness = 0.5
 particle_flag_disable_z = true
-direction = Vector3(-1, 0, 0)
-spread = 90.0
-initial_velocity_max = 100.0
+angle_min = 1.07288e-05
+angle_max = 360.0
+spread = 180.0
+initial_velocity_max = 256.0
 gravity = Vector3(0, 0, 0)
 
-[node name="BulletA" type="CharacterBody2D" node_paths=PackedStringArray("aplayer", "sprite")]
+[node name="BulletC" type="CharacterBody2D" node_paths=PackedStringArray("aplayer", "sprite")]
 scale = Vector2(2, 2)
-script = ExtResource("1_3u1nh")
+script = ExtResource("1_ruosc")
 aplayer = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8nq88")
+texture = ExtResource("2_ruosc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["HitBox"]]
 shape = SubResource("RectangleShape2D_3u1nh")
 disabled = true
 
-[node name="Hitbox" parent="." groups=["Player"] instance=ExtResource("3_8nq88")]
+[node name="Hitbox" parent="." groups=["Player"] instance=ExtResource("3_vxwc8")]
 target_group = "Enemy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_8nq88")
+shape = SubResource("CircleShape2D_uuejs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_rpsmk")
+&"": SubResource("AnimationLibrary_uuejs")
 }
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-scale = Vector2(0.5, 0.5)
 emitting = false
-texture = ExtResource("4_rpsmk")
-lifetime = 0.1
-process_material = SubResource("ParticleProcessMaterial_t60f2")
+amount = 128
+texture = ExtResource("4_uuejs")
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_g8fme")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
