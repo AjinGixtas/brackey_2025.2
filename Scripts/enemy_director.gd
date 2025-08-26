@@ -60,13 +60,13 @@ func _spawn_enemy(budget: float) -> void:
 	var spawn_pos = Vector2(randf_range(start_marker.global_position.x, end_marker.global_position.x), 
 		randf_range(start_marker.global_position.y, end_marker.global_position.y))
 	var HARD_CAP = 32; var i = 0;
-	while spawn_pos.distance_squared_to(player.global_position) < 32400 and i < HARD_CAP:
-		spawn_pos = Vector2(randf_range(start_marker.global_position.x, end_marker.global_position.x), 
-		randf_range(start_marker.global_position.y, end_marker.global_position.y))
+	while spawn_pos.distance_squared_to(player.global_position) < 25600 and i < HARD_CAP:
+		spawn_pos = Vector2(
+			randf_range(start_marker.global_position.x, end_marker.global_position.x), 
+			randf_range(start_marker.global_position.y, end_marker.global_position.y)
+		)
 		i += 1
 	add_child(inst)
-
-
 	inst.global_position = spawn_pos
 	# Deduct pts
 	amount_of_pts_in_sys -= chosen["pts"]
@@ -77,5 +77,5 @@ var amount_of_pts_in_sys : float = 0
 
 var amount_of_pts_in_game_cap : float = 64
 var amount_of_pts_in_sys_cap : float = 32
-var amount_of_pts_in_sys_gen_speed : float = 5
+var amount_of_pts_in_sys_gen_speed : float = 32
 var amount_of_pts_transfer_cap : float = 1

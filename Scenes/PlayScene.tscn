@@ -39,5 +39,6 @@ end_marker = NodePath("Marker2D2")
 [node name="Marker2D2" type="Marker2D" parent="EnemyDirector"]
 position = Vector2(4128, 4128)
 
-[node name="UpgradeDirector" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_353r0")]
+[node name="UpgradeDirector" parent="." node_paths=PackedStringArray("player", "enemy_director") instance=ExtResource("5_353r0")]
 player = NodePath("../Player")
+enemy_director = NodePath("../EnemyDirector")

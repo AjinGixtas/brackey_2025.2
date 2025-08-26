@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7l5xuiyxg7cm"]
 
 [ext_resource type="Script" uid="uid://bldoikwmc5mjr" path="res://Scripts/bullet_a.gd" id="1_3u1nh"]
-[ext_resource type="Texture2D" uid="uid://c83kyuqq6d7bg" path="res://Arts/UI_Art_0.png" id="1_rmw61"]
+[ext_resource type="Texture2D" uid="uid://ctahbrkfmaen" path="res://Arts/BulletA.png" id="2_8nq88"]
 [ext_resource type="PackedScene" uid="uid://jaodqjtor0rb" path="res://Scenes/hitbox.tscn" id="3_8nq88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1nh"]
@@ -10,11 +10,12 @@ size = Vector2(4, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nq88"]
 size = Vector2(12, 12)
 
-[node name="BulletA" type="CharacterBody2D"]
+[node name="BulletA" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_3u1nh")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rmw61")
+texture = ExtResource("2_8nq88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["HitBox"]]
 shape = SubResource("RectangleShape2D_3u1nh")

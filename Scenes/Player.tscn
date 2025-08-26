@@ -21,13 +21,14 @@ size = Vector2(24, 48)
 [node name="Player" type="Node2D" node_paths=PackedStringArray("positional_component", "gun_behavior_control")]
 script = ExtResource("1_yoq75")
 positional_component = NodePath("PositionalComponent")
-gun_behavior_control = NodePath("GunBehaviorControl")
+gun_behavior_control = NodePath("MiscContainer/GunBehaviorControl")
 
 [node name="PositionalComponent" type="CharacterBody2D" parent="." node_paths=PackedStringArray("statsheet")]
 script = ExtResource("1_kpjcp")
-statsheet = NodePath("../StatSheet")
+statsheet = NodePath("../MiscContainer/StatSheet")
 
 [node name="Camera2D" type="Camera2D" parent="PositionalComponent"]
+zoom = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PositionalComponent"]
 shape = SubResource("RectangleShape2D_kpjcp")
@@ -44,13 +45,14 @@ rotation = -1.5708
 scale = Vector2(4, 4)
 texture = ExtResource("1_xhfnw")
 
-[node name="GunControlPoint" type="Node2D" parent="PositionalComponent" node_paths=PackedStringArray("bullet_spawn_point", "gun_behavior_control", "statsheet", "bullet_container", "gun_sprite")]
+[node name="GunControlPoint" type="Node2D" parent="PositionalComponent" node_paths=PackedStringArray("bullet_spawn_point", "gun_behavior_control", "statsheet", "bullet_container", "gun_sprite", "shoot_timer")]
 script = ExtResource("4_52ee3")
 bullet_spawn_point = NodePath("Sprite2D/BulletSpawnPoint")
-gun_behavior_control = NodePath("../../GunBehaviorControl")
-statsheet = NodePath("../../StatSheet")
+gun_behavior_control = NodePath("../../MiscContainer/GunBehaviorControl")
+statsheet = NodePath("../../MiscContainer/StatSheet")
 bullet_container = NodePath("../../BulletContainer")
 gun_sprite = NodePath("Sprite2D")
+shoot_timer = NodePath("../../MiscContainer/ShootTimer")
 temp_shooter_scene = ExtResource("6_ksbbd")
 
 [node name="Sprite2D" type="Sprite2D" parent="PositionalComponent/GunControlPoint"]
@@ -67,14 +69,24 @@ position = Vector2(4, -2)
 scale = Vector2(0.008, 0.008)
 texture = ExtResource("6_megsn")
 
-[node name="GunBehaviorControl" type="Node" parent="."]
+[node name="BulletContainer" type="Node2D" parent="."]
+
+[node name="MiscContainer" type="Node2D" parent="."]
+
+[node name="GunBehaviorControl" type="Node" parent="MiscContainer"]
 script = ExtResource("3_gntrk")
 bulletA_scene = ExtResource("7_bhhdu")
 
-[node name="StatSheet" type="Node" parent="."]
+[node name="StatSheet" type="Node" parent="MiscContainer"]
 script = ExtResource("4_dewec")
 bullet_damage = 1
-bullet_speed = 512.0
+bullet_speed = 1024.0
 move_speed = 256.0
 
-[node name="BulletContainer" type="Node2D" parent="."]
+[node name="ShootTimer" type="Timer" parent="MiscContainer"]
+wait_time = 0.5
+one_shot = true
+
+[node name="PlayerHUD" type="CanvasLayer" parent="."]
+
+[connection signal="timeout" from="MiscContainer/ShootTimer" to="PositionalComponent/GunControlPoint" method="_on_shoot_timer_timeout"]
