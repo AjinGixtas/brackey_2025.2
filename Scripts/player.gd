@@ -5,3 +5,4 @@ class_name Player extends Node2D
 @export var heat_manager : HeatManager
 @export var bullet_display : BulletDisplay
 @export var upgrade_director : UpgradeDirector
+@export var health_manager : HealthManager

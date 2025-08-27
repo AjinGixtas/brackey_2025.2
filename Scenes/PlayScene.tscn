@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dpitp3rres3t2"]
+[gd_scene load_steps=32 format=4 uid="uid://dpitp3rres3t2"]
 
 [ext_resource type="Texture2D" uid="uid://72l2u8ae6g8" path="res://Arts/Floor.png" id="1_s7ljx"]
 [ext_resource type="PackedScene" uid="uid://cprh0n7nb2jbv" path="res://Scenes/Player.tscn" id="2_lakq1"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://yaxej0ju444c" path="res://Arts/HeatIcon1.png" id="9_i7ohh"]
 [ext_resource type="Texture2D" uid="uid://c13d8b86w5c3u" path="res://Arts/trans_hollow_square.png" id="9_km2lw"]
 [ext_resource type="Script" uid="uid://dg0nhaauyndf1" path="res://Scripts/bullet_display.gd" id="12_qkcup"]
+[ext_resource type="Script" uid="uid://johb0cd78bdy" path="res://Scenes/health_manager.gd" id="13_vokhw"]
+[ext_resource type="Texture2D" uid="uid://dodmd7ubgi3jv" path="res://Arts/heart_full.png" id="14_fuy27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lakq1"]
 texture = ExtResource("1_s7ljx")
@@ -329,6 +331,48 @@ theme = SubResource("Theme_611d0")
 layout_mode = 2
 theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 1
+
+[node name="HealthManager" type="Control" parent="PlayerHUD/Control" node_paths=PackedStringArray("health_display_textures")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_vokhw")
+health_display_textures = [NodePath("MarginContainer/HFlowContainer/Heart0"), NodePath("MarginContainer/HFlowContainer/Heart1"), NodePath("MarginContainer/HFlowContainer/Heart2"), NodePath("MarginContainer/HFlowContainer/Heart3"), NodePath("MarginContainer/HFlowContainer/Heart4")]
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerHUD/Control/HealthManager"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PlayerHUD/Control/HealthManager/MarginContainer"]
+layout_mode = 2
+
+[node name="Heart0" type="TextureRect" parent="PlayerHUD/Control/HealthManager/MarginContainer/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_fuy27")
+
+[node name="Heart1" type="TextureRect" parent="PlayerHUD/Control/HealthManager/MarginContainer/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_fuy27")
+
+[node name="Heart2" type="TextureRect" parent="PlayerHUD/Control/HealthManager/MarginContainer/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_fuy27")
+
+[node name="Heart3" type="TextureRect" parent="PlayerHUD/Control/HealthManager/MarginContainer/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_fuy27")
+
+[node name="Heart4" type="TextureRect" parent="PlayerHUD/Control/HealthManager/MarginContainer/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_fuy27")
 
 [node name="UpgradeDirector" parent="." node_paths=PackedStringArray("player", "enemy_director") instance=ExtResource("5_353r0")]
 player = NodePath("../Player")
