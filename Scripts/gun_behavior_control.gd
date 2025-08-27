@@ -1,6 +1,6 @@
 class_name GunBehaviorControl extends Node
 var bullet_progress : int = 0
-var max_bullet : int = 12
+var max_bullet : int = 16
 var mag_bullets : Array[String] = []
 @export var bulletA_scene : PackedScene
 @export var bulletB_scene : PackedScene

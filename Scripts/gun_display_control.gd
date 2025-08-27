@@ -24,7 +24,7 @@ func shoot():
 	var bullet_scene: PackedScene = bullet_data[2]
 	var shoot_type : String = bullet_data[3]
 	var bullet_type = bullet_data[0].split("_")[1]
-	shoot_timer.start()
+	shoot_timer.start(.5 - player.heat_manager.current_heat / 30 * .3)
 	var temp_shooter : TempShooter = temp_shooter_scene.instantiate()
 	if pellet_count <= 0 || bullet_scene == null: 
 		push_error("GRAVE ERROR: pellet_count = %s" % str(bullet_data))

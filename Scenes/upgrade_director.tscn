@@ -1581,6 +1581,8 @@ _data = {
 
 [node name="UpgradeDirector" type="CanvasLayer" node_paths=PackedStringArray("current_upgrade_boxes", "upgrade_selection_boxes", "animation_player")]
 script = ExtResource("1_ugic4")
+selected_new_upgrade = null
+selected_old_upgrade = null
 current_upgrade_boxes = [NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox"), NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/MarginContainer/UpgradeSelectionBox2"), NodePath("UpgradeDisplay/Bullet2SwitchFrom/HBoxContainer/UpgradeSelectionBox3")]
 upgrade_selection_boxes = [NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox"), NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/MarginContainer/UpgradeSelectionBox2"), NodePath("UpgradeDisplay/Bullet2Switch2/HBoxContainer/UpgradeSelectionBox3")]
 animation_player = NodePath("AnimationPlayer")

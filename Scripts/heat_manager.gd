@@ -19,7 +19,7 @@ func _process(delta):
 	normal_heat_bar.value = move_toward(normal_heat_bar.value, current_heat, delta * 7.5)
 	overheat_bar.value = current_heat - normal_heat_bar.max_value
 	
-	var heat_percentage = current_heat / heat_cap
+	var heat_percentage = current_heat / 10
 	
 	# Make effects ramp harder above 100%
 	var visual_percent = heat_percentage
@@ -29,5 +29,5 @@ func _process(delta):
 		# tuning knobs: ^ exponent controls curve steepness, * multiplier controls boost strength
 	
 	heat_icon.scale = Vector2.ONE * (0.25 + visual_percent)
-	heat_icon.rotation_degrees = (randf() - .5) * 60 * pow(visual_percent, 5)
-	heat_overlay.color = Color(1, 0, 0, clamp(0.2 * visual_percent, 0, .95))
+	heat_icon.rotation_degrees = (randf() - .5) * 20 * pow(visual_percent, 2)
+	heat_overlay.color = Color(1, 0, 0, 0.2 * visual_percent)

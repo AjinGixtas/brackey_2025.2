@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcgcauakth4up"]
+[gd_scene load_steps=7 format=3 uid="uid://bcgcauakth4up"]
 
 [ext_resource type="Script" uid="uid://7emsrrb31ot1" path="res://Scripts/crawlie.gd" id="1_3uybj"]
 [ext_resource type="Texture2D" uid="uid://c7ge4jsikwo0q" path="res://Arts/UI_Art_1.png" id="2_wu0d5"]
 [ext_resource type="PackedScene" uid="uid://vjsdvc4foqct" path="res://Scenes/hurtbox.tscn" id="3_bru4l"]
+[ext_resource type="PackedScene" uid="uid://jaodqjtor0rb" path="res://Scenes/hitbox.tscn" id="4_fobkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bru4l"]
 size = Vector2(40, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ik588"]
+radius = 16.0
 
 [node name="Crawlie" type="Node2D"]
 script = ExtResource("1_3uybj")
@@ -22,5 +26,12 @@ node_user = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("RectangleShape2D_bru4l")
+
+[node name="Hitbox" parent="." instance=ExtResource("4_fobkr")]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_ik588")
 
 [connection signal="died" from="Hurtbox" to="." method="_on_taking_damage"]

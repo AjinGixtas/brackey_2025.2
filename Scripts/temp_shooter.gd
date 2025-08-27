@@ -57,7 +57,7 @@ func shoot_spray(delta: float) -> void:
 	if time2shoot_counter < TIME_TO_SHOOT: return
 	time2shoot_counter -= TIME_TO_SHOOT
 
-	var offset := deg_to_rad(randf_range(-pow(spray_counter, 1.5), pow(spray_counter, 1.5)) * 1.5)
+	var offset := deg_to_rad(randf_range(-1, 1) * pow(spray_counter, 1.2) * 5)
 	spawn_bullet(offset)
 	spray_counter += 1
 	if spray_counter >= pellet_count: queue_free()

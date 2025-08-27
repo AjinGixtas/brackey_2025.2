@@ -22,9 +22,9 @@ var round_strength : float
 @export var fire_type_texture : TextureRect
 @export var bullet_type_texture : TextureRect
 func _ready():
-	init()
-func init():
-	picked_round_idx = randi_range(0, len(upgrade_director.player.gun_behavior_control.mag_bullets) - 1)
+	init(0)
+func init(picked_round_idx : int):
+	self.picked_round_idx = picked_round_idx 
 	round_strength = calculate_strength(upgrade_director.player.gun_behavior_control.mag_bullets[picked_round_idx])
 	var round_name := upgrade_director.player.gun_behavior_control.mag_bullets[picked_round_idx]
 	var round_name_parts := round_name.split("_")

@@ -3,8 +3,8 @@ class_name UpgradeSelectionBox extends Control
 const SHOT_TYPE := ["A", "B", "C"] # A - Normal, B - Pierce, C - Explosive
 const SHOT_NUMB := ["1", "2", "3", "4", "5", "7", "8", "9", "10"]
 const FIRE_TYPE := ["!", "@"] # ! - Blast, @ - Spray
-const base_type := { "A": 1.0, "B": 1.2, "C": 1.5 }
-const base_fire := { "!": 1.3, "@": 1.0 }
+const base_type := { "A": 1.0, "B": 1.2, "C": 1.4 }
+const base_fire := { "!": 1.0, "@": 1.0 }
 const type_thumbnail := { 
 	"A": preload("res://Arts/RoundThumbnailA.png"), 
 	"B": preload("res://Arts/RoundThumbnailB.png"), 
@@ -43,6 +43,7 @@ func calculate_strength(name: String) -> float:
 	var shot_numb := int(parts[0]); var shot_type := parts[1]; var fire_type := parts[2]
 	var hash_result := name.hash() % 2048; 
 	var random_offset := (float(hash_result) / 1000.0) * 0.2 + 0.9
+	print("random_offset = ", random_offset)
 	return (shot_numb * 10.0) * base_type[shot_type] * base_fire[fire_type] * random_offset
 
 func _on_button_pressed():

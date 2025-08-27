@@ -3,7 +3,7 @@ class_name EnemyDirector extends Node2D
 @export var crawlie_scene : PackedScene
 @export var start_marker : Marker2D
 @export var end_marker : Marker2D
-
+@export var move_speed : float = 32
 var enemies : Array = []
 func _ready():
 	enemies = [
@@ -70,6 +70,7 @@ func _spawn_enemy(budget: float) -> void:
 			clamp(spawn_pos.x, start_marker.global_position.x, end_marker.global_position.x), 
 			clamp(spawn_pos.y, start_marker.global_position.y, end_marker.global_position.y))
 		i += 1
+	inst.move_speed = move_speed
 	add_child(inst)
 	inst.global_position = spawn_pos
 	# Deduct pts

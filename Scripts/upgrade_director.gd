@@ -12,8 +12,10 @@ func pull_up_upgrade():
 func init():
 	selected_new_upgrade = -1
 	selected_old_upgrade = -1
+	var temp := [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+	temp.shuffle()
 	for i in range(3):
-		current_upgrade_boxes[i].init()
+		current_upgrade_boxes[i].init(temp[i])
 		upgrade_selection_boxes[i].init()
 	curr_wave += 1
 	if (curr_wave % wave_per_health_increase == 0): enemy_director.enemy_health += 1
@@ -36,10 +38,11 @@ func swap_upgrade():
 	var new_round_val := upgrade_selection_boxes[selected_new_upgrade].round_name
 	var pow_diff = abs(current_upgrade_boxes[selected_old_upgrade].round_strength - upgrade_selection_boxes[selected_new_upgrade].round_strength)
 	player.gun_behavior_control.mag_bullets[old_round_idx] = new_round_val
-	enemy_director.amount_of_pts_in_sys_gen_speed += pow_diff * .5
-	enemy_director.amount_of_pts_in_game_cap += pow_diff * .5
-	enemy_director.amount_of_pts_in_sys_cap += pow_diff * .5
-	print(pow_diff)
+	enemy_director.amount_of_pts_in_sys_gen_speed += pow_diff * .2
+	enemy_director.amount_of_pts_in_game_cap += pow_diff * .2
+	enemy_director.amount_of_pts_in_sys_cap += pow_diff * .2
+	enemy_director.move_speed += 2
+	print("pow_diff = ", pow_diff)
 	animation_player.play_backwards("pull_down_upgrade")
 	bullet_swapped.emit()
 func finish():
