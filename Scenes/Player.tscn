@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cprh0n7nb2jbv"]
+[gd_scene load_steps=17 format=3 uid="uid://cprh0n7nb2jbv"]
 
 [ext_resource type="Script" uid="uid://ccsaidshaemc2" path="res://Scripts/positional_component.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://cdr4mp41i4goo" path="res://Arts/InteractableWall.png" id="1_xhfnw"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c7l5xuiyxg7cm" path="res://Scenes/Bullets/BulletA.tscn" id="7_bhhdu"]
 [ext_resource type="PackedScene" uid="uid://c7mnvb3pq4gd7" path="res://Scenes/Bullets/BulletB.tscn" id="11_glx4g"]
 [ext_resource type="PackedScene" uid="uid://hwyfxpr28ory" path="res://Scenes/Bullets/BulletC.tscn" id="12_miouo"]
+[ext_resource type="PackedScene" uid="uid://bpmp8qa6mouvc" path="res://Scenes/bullet_round_display.tscn" id="13_o3h8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(4, 4)
@@ -78,11 +79,13 @@ texture = ExtResource("6_megsn")
 
 [node name="MiscContainer" type="Node2D" parent="."]
 
-[node name="GunBehaviorControl" type="Node" parent="MiscContainer"]
+[node name="GunBehaviorControl" type="Node" parent="MiscContainer" node_paths=PackedStringArray("player")]
 script = ExtResource("3_gntrk")
 bulletA_scene = ExtResource("7_bhhdu")
 bulletB_scene = ExtResource("11_glx4g")
 bulletC_scene = ExtResource("12_miouo")
+player = NodePath("../..")
+bullet_round_display = ExtResource("13_o3h8g")
 
 [node name="StatSheet" type="Node" parent="MiscContainer"]
 script = ExtResource("4_dewec")

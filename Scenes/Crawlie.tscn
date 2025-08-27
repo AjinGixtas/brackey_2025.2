@@ -23,4 +23,4 @@ node_user = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("RectangleShape2D_bru4l")
 
-[connection signal="died" from="Hurtbox" to="." method="_on_died"]
+[connection signal="died" from="Hurtbox" to="." method="_on_taking_damage"]

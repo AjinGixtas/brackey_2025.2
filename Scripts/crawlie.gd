@@ -2,8 +2,9 @@ class_name Crawlie extends Node2D
 @export var move_speed = 32
 var enemy_director : EnemyDirector
 var point_amount : int
+var health : int
 @warning_ignore("shadowed_variable")
-func init(enemy_director : EnemyDirector, point_amount : int):
+func init(enemy_director : EnemyDirector, point_amount : int, health_amount : int = 1):
 	self.enemy_director = enemy_director
 	self.point_amount = point_amount
 func _process(delta):
@@ -13,3 +14,8 @@ func _process(delta):
 func _on_died():
 	enemy_director.enemy_killed(point_amount)
 	queue_free()
+
+
+func _on_taking_damage():
+	health -= 1
+	if health <= 0: _on_died()

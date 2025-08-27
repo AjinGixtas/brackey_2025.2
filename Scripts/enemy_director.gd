@@ -34,7 +34,7 @@ func _process(delta):
 	if budget >= enemies[0]["pts"]: _spawn_enemy(budget)
 	#print(amount_of_pts_in_game, ' ', amount_of_pts_in_sys, ' ', amount_of_pts_in_game_cap, ' ', amount_of_pts_in_sys_cap, ' ', amount_of_pts_in_sys_gen_speed, ' ', amount_of_pts_transfer_cap)
 
-
+@export var enemy_health : int
 func _spawn_enemy(budget: float) -> void:
 	var candidates = []
 	for e in enemies:
@@ -56,16 +56,16 @@ func _spawn_enemy(budget: float) -> void:
 
 	# Spawn the enemy
 	var inst = chosen["scene"].instantiate()
-	inst.init(self, chosen["pts"])
+	inst.init(self, chosen["pts"], enemy_health)
 	var spawn_pos = Vector2(randf_range(start_marker.global_position.x, end_marker.global_position.x), 
 		randf_range(start_marker.global_position.y, end_marker.global_position.y))
 	var HARD_CAP = 32; var i = 0;
-	spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * 700
+	spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * randf_range(650, 700)
 	spawn_pos = Vector2(
 		clamp(spawn_pos.x, start_marker.global_position.x, end_marker.global_position.x), 
 		clamp(spawn_pos.y, start_marker.global_position.y, end_marker.global_position.y))
 	while spawn_pos.distance_squared_to(player.positional_component.global_position) < 409600 and i < HARD_CAP:
-		spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * 700
+		spawn_pos = player.positional_component.global_position + Vector2.RIGHT.rotated(randf() * TAU) * randf_range(650, 700)
 		spawn_pos = Vector2(
 			clamp(spawn_pos.x, start_marker.global_position.x, end_marker.global_position.x), 
 			clamp(spawn_pos.y, start_marker.global_position.y, end_marker.global_position.y))

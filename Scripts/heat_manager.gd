@@ -1,18 +1,17 @@
 class_name HeatManager extends Control
 
-@export var heat_cap : float = 10
+@export var heat_cap : float = 30
 @export var current_heat : float = 0
 @export var normal_heat_bar : TextureProgressBar
 @export var overheat_bar : TextureProgressBar
 @export var heat_icon : TextureRect
 @export var heat_overlay : ColorRect
 @export var player : Player
-func increase_heat(bullet_name : String):
-	current_heat += 1.0
+func increase_heat(heat : float):
+	current_heat = clamp(current_heat + heat, 0, heat_cap)
 	heat_decel = 0
 var heat_decel : float = 0
 func _process(delta):
-	return
 	delta /= Engine.time_scale
 	current_heat = max(0, current_heat - heat_decel * delta)
 	heat_decel += delta * 3
@@ -30,4 +29,5 @@ func _process(delta):
 		# tuning knobs: ^ exponent controls curve steepness, * multiplier controls boost strength
 	
 	heat_icon.scale = Vector2.ONE * (0.25 + visual_percent)
-	heat_overlay.color = Color(1, 0, 0, 0.2 * visual_percent)
+	heat_icon.rotation_degrees = (randf() - .5) * 60 * pow(visual_percent, 5)
+	heat_overlay.color = Color(1, 0, 0, clamp(0.2 * visual_percent, 0, .95))

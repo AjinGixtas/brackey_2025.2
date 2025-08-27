@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=4 uid="uid://clharybqbnknf"]
+[gd_resource type="Theme" load_steps=10 format=4 uid="uid://clharybqbnknf"]
+
+[ext_resource type="FontFile" uid="uid://cmnwntkudpkmv" path="res://Arts/04B_03__.TTF" id="1_roocc"]
 
 [sub_resource type="Image" id="Image_7tuhd"]
 data = {
@@ -861,6 +863,19 @@ expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sygxv"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 2
+corner_detail = 2
+anti_aliasing = false
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -886,3 +901,6 @@ Button/styles/focus = SubResource("StyleBoxFlat_7tuhd")
 Button/styles/hover = SubResource("StyleBoxFlat_t607u")
 Button/styles/normal = SubResource("StyleBoxFlat_jt1uc")
 Button/styles/pressed = SubResource("StyleBoxFlat_ka8gn")
+TooltipLabel/font_sizes/font_size = 8
+TooltipLabel/fonts/font = ExtResource("1_roocc")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_sygxv")

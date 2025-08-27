@@ -30,6 +30,10 @@ Enemy=""
 Player=""
 Wall=""
 
+[gui]
+
+timers/tooltip_delay_sec=0.2
+
 [input]
 
 ui_left={

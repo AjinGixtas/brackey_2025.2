@@ -10,9 +10,11 @@ const type_thumbnail := {
 	"B": preload("res://Arts/RoundThumbnailB.png"), 
 	"C": preload("res://Arts/RoundThumbnailC.png") 
 }
+const type_tooltip := { "A": "Normal bullet", "B": "Piercing bullet", "C": "Explosive bomb" }
 const fire_thumbnail := {
 	"!": preload("res://Arts/BlastThumbnail.png"), "@": preload("res://Arts/SprayThumbnail.png")
 }
+const fire_tooltip := { "!": "Blast all bullets at once", "@": "Spray bullets continuously"}
 
 var round_name : String
 var round_strength : float
@@ -26,8 +28,12 @@ func init():
 	var fire_type = pick_biased(FIRE_TYPE, 1)
 	var shot_numb = pick_biased(SHOT_NUMB, 6.0)
 	fire_type_texture.texture = fire_thumbnail[fire_type]
+	fire_type_texture.tooltip_text = fire_tooltip[fire_type]
 	bullet_type_texture.texture = type_thumbnail[shot_type]
+	bullet_type_texture.tooltip_text = type_tooltip[shot_type]
 	label.text = "x" + str(shot_numb)
+	label.tooltip_text = "x" + shot_numb
+
 	round_name = shot_numb + '_' + shot_type + '_' + fire_type
 	round_strength = calculate_strength(round_name)
 

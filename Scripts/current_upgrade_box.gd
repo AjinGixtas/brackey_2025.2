@@ -11,9 +11,11 @@ const type_thumbnail := {
 	"B": preload("res://Arts/RoundThumbnailB.png"), 
 	"C": preload("res://Arts/RoundThumbnailC.png") 
 }
+const type_tooltip := { "A": "Normal bullet", "B": "Piercing bullet", "C": "Explosive bomb" }
 const fire_thumbnail := {
 	"!": preload("res://Arts/BlastThumbnail.png"), "@": preload("res://Arts/SprayThumbnail.png")
 }
+const fire_tooltip := { "!": "Blast all bullets at once", "@": "Spray bullets continuously"}
 var picked_round_idx : int
 var round_strength : float
 @export var label : RichTextLabel
@@ -30,8 +32,11 @@ func init():
 	var shot_type = round_name_parts[1]
 	var fire_type = round_name_parts[2]
 	fire_type_texture.texture = fire_thumbnail[fire_type]
+	fire_type_texture.tooltip_text = fire_tooltip[fire_type]
 	bullet_type_texture.texture = type_thumbnail[shot_type]
+	bullet_type_texture.tooltip_text = type_tooltip[shot_type]
 	label.text = "x" + shot_numb
+	label.tooltip_text = "x" + shot_numb
 
 @warning_ignore("shadowed_variable_base_class")
 func calculate_strength(name: String) -> float:

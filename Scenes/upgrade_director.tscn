@@ -369,7 +369,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.703125]
+"values": [1.17188]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -381,7 +381,7 @@ tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.672222]
+"values": [0.7]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
@@ -393,7 +393,7 @@ tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.983469]
+"values": [1.45222]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
@@ -405,7 +405,7 @@ tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.843286]
+"values": [0.871063]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
@@ -417,7 +417,7 @@ tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.734375]
+"values": [1.15]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
@@ -429,7 +429,7 @@ tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.133333]
+"values": [-0.233333]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
@@ -441,7 +441,7 @@ tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.02134]
+"values": [1.43697]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
@@ -453,7 +453,7 @@ tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.4104]
+"values": [0.0437331]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
@@ -2250,10 +2250,10 @@ vertical_alignment = 1
 [node name="Control" type="Control" parent="UpgradeDisplay"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 1
-anchor_left = 0.734375
-anchor_top = 0.133333
-anchor_right = 1.02134
-anchor_bottom = 0.4104
+anchor_left = 1.15
+anchor_top = -0.233333
+anchor_right = 1.43697
+anchor_bottom = 0.0437331
 offset_right = -4.4729
 offset_bottom = -14.8592
 rotation = 0.10472
@@ -2280,10 +2280,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Control2" type="Control" parent="UpgradeDisplay"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 1
-anchor_left = 0.703125
-anchor_top = 0.672222
-anchor_right = 0.983469
-anchor_bottom = 0.843286
+anchor_left = 1.17188
+anchor_top = 0.7
+anchor_right = 1.45222
+anchor_bottom = 0.871063
 offset_right = -3.71002
 offset_bottom = 9.20857
 rotation = -0.10472
