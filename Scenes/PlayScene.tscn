@@ -298,6 +298,7 @@ theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 1
 
 [node name="HeatManager" type="Control" parent="PlayerHUD/Control" node_paths=PackedStringArray("normal_heat_bar", "overheat_bar", "heat_icon", "heat_overlay", "player")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -378,8 +379,6 @@ stretch_mode = 4
 [node name="UpgradeDirector" parent="." node_paths=PackedStringArray("player", "enemy_director") instance=ExtResource("5_353r0")]
 player = NodePath("../Player")
 enemy_director = NodePath("../EnemyDirector")
-selected_new_upgrade = null
-selected_old_upgrade = null
 
 [node name="Walls" type="Node2D" parent="."]
 
